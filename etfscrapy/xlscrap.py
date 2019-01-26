@@ -55,5 +55,4 @@ def get():
 
 
 if __name__ == '__main__':
-    #etfs = ['spy','acwi','mtum','xle']
     get()
