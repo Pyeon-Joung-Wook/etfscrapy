@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a0d2ad3e0b","applicationID":"1813554","transactionName":"IV5XQ0RdCFoHEUtRQQRVWxhTRgJFTRAMW0I=","queueTime":0,"applicationTime":96,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={xpid:"VQMAUFRXGwIIVVJXAgU="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script><script>window.user_member_id=undefined;window.cached='true';</script>
+<meta content='360213dbb3cbe3533553ab87e27f7207' name='cache_key'>
+<title>XLU ETF Guide | Stock Quote, Holdings, Fact Sheet and More</title>
+<meta content='Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more.' name='description'>
+<meta content='Sather 1.44.1' name='generator'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
+<meta content='Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more.' property='og:description'>
+<meta content='Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more.' name='twitter:description'>
+<meta content="https://etfdb.com/assets/etfdb-logo-square-b8599285b482729eaf0838b5ec3a85a7.png" property="og:image"/>
+<meta content='ETFdb.com' property='og:site_name'>
+<meta content='Utilities Select Sector SPDR Fund' property='og:title'>
+<meta content='article' property='og:type'>
+<meta content='https://etfdb.com/etf/XLU/' property='og:url'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='etfdb.com' name='twitter:domain'>
+<meta content="https://etfdb.com/assets/etfdb-logo-square-b8599285b482729eaf0838b5ec3a85a7.png" name="twitter:image:src"/>
+<meta content='ETFdb' name='twitter:site'>
+<meta content='Utilities Select Sector SPDR Fund' name='twitter:title'>
+<script src="/assets/tikkanen/analytics-dfe8dd256b283349c17d42a828d4c95d.js"></script>
+<script>window.Mitre=window.Mitre||{};window.Mitre.header=152;window.Mitre.propelorStickyHeader=false;</script>
+<link href="/assets/xfavicon-462c3177f4c52db4117f1635ff1d6fe1.ico.pagespeed.ic.uT6QzAA1a-.png" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<!--
+Components Versions:
+Core <1.44.1>
+Engine: Etfdb <1.77.3>
+Backend <1.14.21>
+Tikkanen <1.34.3>
+-->
+<link href="/assets/xapple-touch-icon-bc5ad4c119cd3b4aa4a86d2d1a95ea38.png.pagespeed.ic.xmdmBQWsCj.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/assets/xapple-touch-icon-precomposed-bc5ad4c119cd3b4aa4a86d2d1a95ea38.png.pagespeed.ic.xmdmBQWsCj.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+<link href="/assets/xapple-touch-icon-76x76-58d8271c7b10ccbfb3f49d34d93b4b3c.png.pagespeed.ic.50_9gdPwDX.png" rel="apple-touch-icon" sizes="76x76" type="image/png"/>
+<link href="/assets/xapple-touch-icon-120x120-bc5ad4c119cd3b4aa4a86d2d1a95ea38.png.pagespeed.ic.xmdmBQWsCj.png" rel="apple-touch-icon" sizes="120x120" type="image/png"/>
+<link href="/assets/xapple-touch-icon-152x152-994abacf4b476df3d6817bb19aad3524.png.pagespeed.ic.G6Z-qbJ5b5.png" rel="apple-touch-icon" sizes="152x152" type="image/png"/>
+<link href="https://etfdb.com/feed/" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="//fonts.googleapis.com/css?family=PT+Serif:700" media="screen" rel="stylesheet"/>
+<link href="/assets/A.etfdb-8e5d58e3eff904468dfab4884147ac50.css.pagespeed.cf.iWt7Rf-GYW.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">function defer(method){if(window.jQuery)method();else
+setTimeout(function(){defer(method)},50);}</script>
+<!-- Piwik -->
+<script type="text/javascript">var _paq=_paq||[];_paq.push(["setCookieDomain","*.etfdb.com"]);_paq.push(["setDomains",["*.etfdb.com"]]);if(typeof user_member_id!=='undefined'){_paq.push(["setCustomVariable",1,"member_id",user_member_id,"visit"]);}_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//beacon.mitremedia.org/";_paq.push(['setTrackerUrl',u+'piwik.php']);_paq.push(['setSiteId',1]);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.defer=true;g.src=u+'piwik.js';s.parentNode.insertBefore(g,s);})();function hotjar_piwik(){if(!hotjar_userid_ready())return
+clearInterval(hotjar_piwik_check);window._paq.push(["setCustomVariable",2,"hotjar_id",window.hj.pageVisit.property.get("userId"),"visit"]);window._paq.push(['trackEvent','Hotjar','loaded']);}function hotjar_userid_ready(){return typeof hj!=='undefined'&&typeof hj.pageVisit!=='undefined'&&typeof hj.pageVisit.property!=='undefined'&&typeof hj.pageVisit.property.get("userId")=='string'}var hotjar_piwik_check=setInterval(hotjar_piwik,1000);</script>
+<noscript><p><img src="//beacon.mitremedia.org/piwik.php?idsite=1" style="border:0;" alt=""/></p></noscript>
+<!-- End Piwik Code -->
+<script type="text/javascript">Mitre.Analytics.enable({account:'UA-274507-14'});var userMembershipLevel='Public'
+Mitre.Analytics.setCustomVar(1,'Membership Level',userMembershipLevel);window.userMembershipLevel=userMembershipLevel;Mitre.Analytics.setCustomVar(2,'Platform','Sather');Mitre.Analytics.setCustomVar(3,'Cached',window.cached);function getCookie(cname){var name=cname+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' '){c=c.substring(1);}if(c.indexOf(name)==0){var value=c.substring(name.length,c.length)
+if(value==0){return'unknown';}else{return c.substring(name.length,c.length);}}}return"unknown";}Mitre.Analytics.setCustomVar(5,'Investor Type',getCookie('invstr_seg'));Mitre.Analytics.trackPageview();</script>
+<script type='text/javascript'>;(function(window,document,undefined){var SERVED='dfp-unit-served',NOT_SERVED='dfp-unit-not-served',PLCEHLDROVRRDE='dfp-unit-placeholder-override',WIDTH_GT='dfp-unit-width-gt',WIDTH_LT='dfp-unit-width-lt',HEIGHT_GT='dfp-unit-height-gt',HEIGHT_LT='dfp-unit-height-lt',REMOVE_IFRAME='dfp-unit-remove-iframe',REMOVE_IFRAME_AGAIN='dfp-unit-remove-iframe-again',MANIPULATION='-manipulation',DISPLAY='data-ad-slot-defer',ONLOAD='dfp-unit-loaded';var clickTrackMap={};var queue=[];function postOnLoadFunction(event){if(window.jQuery){processEvent(event);}else{queue.push(event);}}document.addEventListener('DOMContentLoaded',function(){queue.forEach(processEvent);extractIframeSupplement();window.addEventListener('scroll',displayAds);});function processEvent(event){if(event.lineItemId){var iframeId='google_ads_iframe_'+event.slot.getSlotId().toString();clickTrackMap[iframeId]=event.lineItemId;}var id=event.slot.getSlotId().getDomId();var elements=window.jQuery('[data-dfp-unit~="'+id+'"]');elements.each(function(){var actions=[];var $el=window.jQuery(this);var push=pushData($el,actions);if(typeof window.placeholders=='object'&&$el.data('dfpUnitPlaceholderOverride')){push(PLCEHLDROVRRDE);applyManipulations($el,actions);return;}push(ONLOAD);if(event.isEmpty){push(NOT_SERVED);applyManipulations($el,actions);return;}push(SERVED);if($el.data(REMOVE_IFRAME)){try{removeIFrame($el,false);}catch(e){window.console.log(e);}}setTimeout(function(){if($el.data(REMOVE_IFRAME_AGAIN)){try{removeIFrame($el,true);}catch(e){window.console.log(e);}}},2000);if(event.size){var width=event.size[0];if($el.data(WIDTH_GT)<width)push(WIDTH_GT+MANIPULATION);if($el.data(WIDTH_LT)>width)push(WIDTH_LT+MANIPULATION);var height=event.size[1];if($el.data(HEIGHT_GT)<height)push(HEIGHT_GT+MANIPULATION);if($el.data(HEIGHT_LT)>height)push(HEIGHT_LT+MANIPULATION);}applyManipulations($el,actions);});}function applyManipulations($el,actions){for(var i=0;i<actions.length;i+=1){var action=actions[i];for(var name in action){if(!action.hasOwnProperty(name))continue;var args=action[name];var fn=$el[name];if(window.jQuery.isArray(args)){fn.apply($el,args);}else{fn.call($el,args);}}}}function pushData($el,list){return function(name){var data=$el.data(name);if(data){list.push(data);}};}function removeIFrame($el,secondTime){var $doc=window.jQuery(document);var $iframes=$el.find('iframe');$iframes.each(function(){$el.hide();var extracted=false;var iframe=this;var $iframe=window.jQuery(iframe);function extract(){$el.show();if(extracted||!iframe.contentDocument)return;var body=$iframe.contents().find('body').html();if(body.length){$el.html(body);$doc.ready(function(){eventKey=secondTime?'dfp.remove-iframe-again.inserted':'dfp.remove-iframe.inserted';$doc.trigger(eventKey,[$el]);});extracted=true;}}$iframe.on('load ready',extract);setTimeout(extract,2000);});}function extractIframeSupplement(){var $doc=window.jQuery(document);$doc.on('dfp.remove-iframe.inserted',function(event,$el){$el.find('[data-iframe-supplement]').each(function(){var value=$(this).data('iframe-supplement');$el.append(value);});});}function adVisible(el){var $el=$(el);var $window=$(window);var size=$el.attr(DISPLAY);var height=parseInt(size,10)||$el.height();var winTop=$window.scrollTop();var winBot=winTop+$window.height();var elTop=$el.offset().top;var elBot=elTop+height;return((elBot<=winBot)&&(elTop>=winTop));}function displayAds(){var ads=document.querySelectorAll('['+DISPLAY+']');for(var i=0,l=ads.length;i<l;i+=1){if(adVisible(ads[i])){googletag.cmd.push(function(){googletag.display(ads[i].id);});ads[i].removeAttribute(DISPLAY);}}}window.addEventListener('blur',function(){var el=document.activeElement;if(el.tagName!=='IFRAME')return;var lineItemId=clickTrackMap[el.id];if(!lineItemId)return;window._paq=window._paq||[];window._paq.push(['trackEvent','Ads','Click',''+lineItemId]);});window.postOnLoadFunction=postOnLoadFunction;}(window,document));</script>
+<script>interstitialPostOnLoadFunction=function(event){if(event.isEmpty){}else{if(event.slot.getSlotId().getDomId()==='interstitial-ad'){if(event.size[0]===1&&event.size[1]===1)return;document.cookie='popup_domination_icount=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';if(typeof window.newsletterPopupTimeout!=='undefined'){clearTimeout(window.newsletterPopupTimeout);}$('#interstitial-modal').modal();}}};_html=document.documentElement;_html.addEventListener('mouseleave',handleMouseleave);popup=true;function handleMouseleave(e){if(e.clientY>20){return;}if(popup===false){return;}if(popup){$('#exit-intent-feature').html('<script>googletag.cmd.push(function() { googletag.display("exit-intent-feature"); });</scr'+'ipt>');$('#exit-intent-leaderboard').html('<script>googletag.cmd.push(function() { googletag.display("exit-intent-leaderboard"); });</scr'+'ipt>');popup=false;}};exitIntentPostOnLoadFunction=function(event){if(event.isEmpty){}else{if(event.slot.getSlotId().getDomId()==='exit-intent-leaderboard'||event.slot.getSlotId().getDomId()==='exit-intent-feature'){if(event.size[0]===1&&event.size[1]===1)return;if(event.size[0]>$('#exit-intent-modal .modal-dialog').width()){$('#exit-intent-modal .modal-dialog').width(event.size[0]+30);}$('#exit-intent-modal').modal();if(typeof displayTracked=='undefined'){displayTracked=true
+Mitre.Analytics.trackEvent('Exit Interstitial','Impression','iShares 4Q15',undefined,true);}}}};allowedAds={'exit-intent-feature':'Right','exit-intent-stacked':'Right Stacked','exit-intent-leaderboard':'Bottom'};exitIntentEvents=function(event){var slotId=event.slot.getSlotElementId();var adName=allowedAds[slotId];if(!event.isEmpty&&adName){var id="google_ads_iframe_"+event.slot.getSlotId();var iframe=document.getElementById(id);$(iframe).contents().find("body").on("click",function(){Mitre.Analytics.trackEvent('Exit Interstitial',adName+' Ad Click','iShares 4Q15');});}};interstitialDelay=function(interstitial){$(interstitial).on('show.bs.modal',function(e){setTimeout(function(){$('.modal-backdrop.in').css('opacity','0.5');$(interstitial).css('opacity','1');},2000);})};</script>
+<script>interstitialPostOnLoadFunction=function(event){if(event.isEmpty){}else{if(event.slot.getSlotId().getDomId()==='interstitial-ad'){if(event.size[0]===1&&event.size[1]===1)return;document.cookie='popup_domination_icount=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';if(typeof window.newsletterPopupTimeout!=='undefined'){clearTimeout(window.newsletterPopupTimeout);}$('#interstitial-modal').modal();}}};_html=document.documentElement;_html.addEventListener('mouseleave',handleMouseleave);popup=true;function handleMouseleave(e){if(e.clientY>20){return;}if(popup===false){return;}if(popup){$('#exit-intent-feature').html('<script>googletag.cmd.push(function() { googletag.display("exit-intent-feature"); });</scr'+'ipt>');$('#exit-intent-leaderboard').html('<script>googletag.cmd.push(function() { googletag.display("exit-intent-leaderboard"); });</scr'+'ipt>');popup=false;}};exitIntentPostOnLoadFunction=function(event){if(event.isEmpty){}else{if(event.slot.getSlotId().getDomId()==='exit-intent-leaderboard'||event.slot.getSlotId().getDomId()==='exit-intent-feature'){if(event.size[0]===1&&event.size[1]===1)return;if(event.size[0]>$('#exit-intent-modal .modal-dialog').width()){$('#exit-intent-modal .modal-dialog').width(event.size[0]+30);}$('#exit-intent-modal').modal();if(typeof displayTracked=='undefined'){displayTracked=true
+Mitre.Analytics.trackEvent('Exit Interstitial','Impression','iShares 4Q15',undefined,true);}}}};allowedAds={'exit-intent-feature':'Right','exit-intent-stacked':'Right Stacked','exit-intent-leaderboard':'Bottom'};exitIntentEvents=function(event){var slotId=event.slot.getSlotElementId();var adName=allowedAds[slotId];if(!event.isEmpty&&adName){var id="google_ads_iframe_"+event.slot.getSlotId();var iframe=document.getElementById(id);$(iframe).contents().find("body").on("click",function(){Mitre.Analytics.trackEvent('Exit Interstitial',adName+' Ad Click','iShares 4Q15');});}};interstitialDelay=function(interstitial){$(interstitial).on('show.bs.modal',function(e){setTimeout(function(){$('.modal-backdrop.in').css('opacity','0.5');$(interstitial).css('opacity','1');},2000);})};</script>
+<script type='text/javascript'>var googletag=googletag||{};googletag.cmd=googletag.cmd||[];(function(){var gads=document.createElement('script');gads.async=true;gads.type='text/javascript';var useSSL='https:'==document.location.protocol;gads.src=(useSSL?'https:':'http:')+'//www.googletagservices.com/tag/js/gpt.js';var node=document.getElementsByTagName('script')[0];node.parentNode.insertBefore(gads,node);})();</script>
+<script type='text/javascript'>googletag.cmd.push(function(){window.interstitialMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[[300,250],[300,600],[120,600],[160,600]]).addSize([970,200],[[300,250],[300,600],[120,600],[160,600],[640,480]]).build();window.stackedInterstitialMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[300,250]).addSize([970,600],[300,250]).build();window.leaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,200],[300,250]).addSize([728,200],[728,90]).addSize([970,200],[[728,90],[970,90]]).addSize([970,400],[[728,90],[970,90],[970,250]]).build();window.inContentLeaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,200],[300,250]).addSize([728,200],[728,90]).build();window.rectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[[300,200],[300,250]]).addSize([970,600],[[300,200],[120,600],[160,600],[300,250],[300,600]]).build();window.blockableRectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([970,600],[[1,1],[300,600]]).build();window.stackedRectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[300,250]).addSize([300,300],[[300,250],[300,300]]).addSize([970,600],[[300,250],[300,300]]).build();window.outOfContentMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([1580,200],[[120,600],[160,600]]).addSize([1855,200],[[120,600],[160,600],[300,250],[300,600],[300,1050]]).build();window.stackedOutOfContentMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([1855,200],[300,250]).build();window.exitIntentRectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([760,600],[[120,600],[160,600],[300,250],[300,600]]).build();window.exitIntentStackedRectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([760,600],[300,250]).build();window.exitIntentLeaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([760,600],[728,90]).addSize([1000,600],[[728,90],[970,90]]).build();window.stickyLeaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[300,50]).addSize([320,250],[[300,50],[320,50]]).addSize([728,768],[728,90]).addSize([970,768],[[728,90],[970,90]]).build();window.a1_20Mapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[[300,250]]).build();window.a1_21Mapping=googletag.sizeMapping().addSize([0,0],[]).addSize([768,200],[[300,250]]).build();window.a1_22Mapping=googletag.sizeMapping().addSize([0,0],[]).addSize([992,200],[[300,250]]).build();window.screener_none_mobile_leaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([728,200],[728,90]).addSize([970,200],[[728,90],[970,90]]).addSize([970,400],[[728,90],[970,90],[970,250]]).build();window.screener_rectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([970,600],[[120,600],[160,600],[300,250],[300,600]]).build();window.screener_stacked_rectangleMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([970,600],[300,250]).build();window.screener_rectangle_mobileMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[300,250]).addSize([970,600],[]).build();window.screener_stacked_rectangle_mobileMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,250],[300,250]).addSize([970,600],[]).build();window.etf_mobile_leaderboardMapping=googletag.sizeMapping().addSize([0,0],[]).addSize([300,200],[300,250]).addSize([728,200],[728,90]).addSize([970,200],[[728,90],[970,90]]).build();googletag.pubads().setTargeting('server',["production"]);googletag.pubads().setTargeting('property',["etfdb"]);googletag.pubads().setTargeting('sub_domain',["www"]);googletag.pubads().setTargeting('invstr_seg',["unknown"]);googletag.pubads().setTargeting('aum',["unknown"]);googletag.pubads().setTargeting('broker',["unknown"]);googletag.pubads().setTargeting('membership',["public"]);googletag.pubads().setTargeting('width',[browserWidth()]);googletag.pubads().collapseEmptyDivs();googletag.pubads().setCentering(true);googletag.pubads().addEventListener('slotRenderEnded',function(event){postOnLoadFunction(event);});googletag.pubads().addEventListener('slotRenderEnded',function(event){interstitialPostOnLoadFunction(event);});googletag.pubads().addEventListener('slotRenderEnded',function(event){exitIntentPostOnLoadFunction(event);});googletag.pubads().addEventListener('slotRenderEnded',function(event){exitIntentEvents(event);});googletag.pubads().addEventListener('slotRenderEnded',function(event){if(!event.isEmpty&&event.size&&event.size[0]>1&&event.size[1]>1){if(event.slot.getSlotId().getDomId()==='sticky-footer'&&!$.cookie('hide-sticky-footer')){$('.sticky-footer').removeClass('hidden');}}});googletag.enableServices();});function browserWidth(){if(window.innerWidth>=1855)return'1855-inf';if(window.innerWidth>=1580)return'1580-1854';if(window.innerWidth>=1200)return'1200-1579';if(window.innerWidth>=992)return'992-1199';if(window.innerWidth>=768)return'768-991';if(window.innerWidth>=480)return'480-767';return'0-479';}function addPageTargeting(target,value){tags=googletag.pubads().getTargeting(target)
+if(tags.indexOf(value)===-1){tags.push(value);googletag.pubads().setTargeting(target,tags);}}setTimeout(function(){addPageTargeting('comp_exlsn_prevent','TRUE')},9000);var vast_dfp_params='cust_params=server%3Dproduction%26property%3Detfdb%26sub_domain%3Dwww%26invstr_seg%3Dunknown%26aum%3Dunknown%26broker%3Dunknown%26membership%3Dpublic';</script>
+</head>
+<body class='ticker-page'>
+<div class='header-area'>
+<div class='header-survey' id='broker-survey'>
+<button class='close pull-right header-survey-dismiss'>
+close
+<span>&times;</span>
+</button>
+<div class='container'>
+<div class='header-survey-question' data-survey-steps='[1]'>
+<div class='header-survey-heading'>
+<div class='h2'>Are you getting the best rate from your broker?</div>
+<div class='h4'>Compare your broker's rates now to find out if you can save money</div>
+</div>
+<div class='header-survey-divider'>
+<hr>
+<div>
+<span>Choose your broker below</span>
+</div>
+</div>
+</div>
+<div class='header-survey-thanks hidden' data-survey-steps='[3]'>
+<div class='header-survey-heading'>
+<div class='h2'>Thank you for selecting your broker</div>
+<div class='h4'>We are redirecting you to the Broker Center now</div>
+</div>
+<div class='header-survey-divider' style='visibility: hidden'>
+<hr>
+<div></div>
+</div>
+</div>
+<div data-survey-steps='[1, 3]'>
+<div class='header-survey-btns'>
+<button class='btn' data-answer='vanguard' data-name='Vanguard' data-url='/best-online-brokers/'>
+Vanguard
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='fidelity' data-name='Fidelity' data-url='/best-online-brokers/'>
+Fidelity
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='td_ameritrade' data-name='TD Ameritrade' data-url='/best-online-brokers/'>
+TD Ameritrade
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='e_trade' data-name='E-Trade' data-url='/best-online-brokers/'>
+E-Trade
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='other' data-name='Other' data-url='/best-online-brokers/'>
+Other
+<div class='fa fa-check'></div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='header-survey' id='investor-survey'>
+<button class='close pull-right'>
+close
+<span>&times;</span>
+</button>
+<div class='container'>
+<div class='header-survey-question' data-survey-steps='[1]'>
+<div class='header-survey-heading h2'>Welcome to ETFdb.com. Please help us personalize your experience.</div>
+<div class='header-survey-divider'>
+<hr>
+<div>
+<span>Select the one that best describes you</span>
+</div>
+</div>
+<div class='header-survey-btns'>
+<button class='btn' data-answer='investor' data-name='Individual Investor'>
+Individual Investor
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='institutional' data-name='Institutional Investor'>
+Institutional Investor
+<div class='fa fa-check'></div>
+</button>
+<button class='btn' data-answer='advisor' data-name='Financial Advisor'>
+Financial Advisor
+<div class='fa fa-check'></div>
+</button>
+</div>
+</div>
+<div class='header-survey-mail hidden' data-survey-steps='[2]'>
+<div class='header-survey-heading hidden' data-survey-personalize='investor'>
+<div class='h2'>Your personalized experience is almost ready.</div>
+</div>
+<div class='header-survey-heading hidden' data-survey-personalize='institutional'>
+<div class='h2'>Your personalized experience is almost ready.</div>
+</div>
+<div class='header-survey-heading hidden' data-survey-personalize='advisor'>
+<div class='h2'>Welcome to ETFdb.com. Sign up for ETFdb.com Advisor Alerts now!</div>
+</div>
+<div class='header-survey-divider'>
+<hr class='hidden' data-survey-personalize='investor'>
+<hr class='hidden' data-survey-personalize='institutional'>
+<div>
+<span class='hidden' data-survey-personalize='investor'>
+Join other Individual Investors receiving FREE personalized market updates and research.
+</span>
+<span class='hidden' data-survey-personalize='institutional'>
+Join other Institutional Investors receiving FREE personalized market updates and research.
+</span>
+</div>
+</div>
+<form action='https://mitremedia.us5.list-manage.com/subscribe/post?u=7eab376f4a9b7d1d63580ce58&amp;id=27adfd3dcc' class='form-inline hidden validate' data-survey-personalize='investor' method='post'>
+<div class='form-group'>
+<input class='required email form-control' name='EMAIL' placeholder='Email Address' type='email'>
+<input name='SIGNUP_LOC' type='hidden' value='investor-type'>
+<input name='INVSTRTYPE' type='hidden'>
+</div>
+<input class='btn btn-secondary' name='subscribe' type='submit' value='Submit'>
+<a class='header-survey-dismiss' href='#'>Not interested</a>
+</form>
+<form action='https://mitremedia.us5.list-manage.com/subscribe/post?u=7eab376f4a9b7d1d63580ce58&amp;id=27adfd3dcc' class='form-inline hidden validate' data-survey-personalize='institutional' method='post'>
+<div class='form-group'>
+<input class='required email form-control' name='EMAIL' placeholder='Email Address' type='email'>
+<input name='SIGNUP_LOC' type='hidden' value='investor-type'>
+<input name='INVSTRTYPE' type='hidden'>
+</div>
+<input class='btn btn-secondary' name='subscribe' type='submit' value='Submit'>
+<a class='header-survey-dismiss' href='#'>Not interested</a>
+</form>
+<form action='https://mitremedia.us5.list-manage.com/subscribe/post?u=7eab376f4a9b7d1d63580ce58&amp;amp;id=39dd3ad7e5' class='form-inline hidden validate' data-survey-personalize='advisor' method='post'>
+<div class='form-group'>
+<input class='required email form-control' name='EMAIL' placeholder='Email Address' type='email'>
+<input name='SIGNUP_LOC' type='hidden' value='investor-type'>
+<input name='INVSTRTYPE' type='hidden'>
+</div>
+<input class='btn btn-secondary' name='subscribe' type='submit' value='Sign up'>
+<a class='header-survey-dismiss' href='#'>Not interested</a>
+</form>
+<div class='header-survey-divider investor-survey-ad-slot hidden' data-survey-personalize='advisor'></div>
+</div>
+<div class='header-survey-thanks hidden' data-survey-steps='[3]'>
+<div class='header-survey-heading' data-survey-personalize='answered'>
+<div class='h2'>Thank you!</div>
+<div class='h4'>Check your email and confirm your subscription to complete your personalized experience.</div>
+</div>
+<div class='header-survey-heading header-survey-dismissed hidden' data-survey-personalize='dismissed'>
+<div class='h2'>Thank you for your submission, we hope you enjoy your experience</div>
+</div>
+</div>
+</div>
+</div>
+<div id='header-alert' data-dfp-unit-remove-iframe='true' data-dfp-unit='header-alert'></div>
+<script>googletag.cmd.push(function(){googletag.defineOutOfPageSlot('/2143012/mitre_webpage','header-alert').setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A10-6"]).addService(googletag.pubads());googletag.display('header-alert');});</script>
+<div class='navmenu navmenu-fixed-left' id='off-canvas-nav'>
+<ul class='nav navmenu-nav mm-user-links'>
+<li><a href="/pricing/">Pricing</a></li>
+<li><a href="/members/join/">Free Sign Up</a></li>
+<li><a href="/members/login/">Login</a></li>
+</ul>
+<hr>
+<ul class='nav navmenu-nav' data-analytics-track-click='{"category": "Navigation", "action": "click"}'>
+<li class="off-canvas-dropdown mobile-special-nav-button"><a class=" nav-orange-white has-submenu" href="//etfdb.com/members/pro/" title="PRO">PRO<b class="caret"></b></a><ul><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/members/pro/" title="ETFdb.com Pro Content">ETFdb.com Pro Content<b class="caret"></b></a><ul><li><a href="//etfdb.com/etf-picks-of-the-month/" title="ETF Picks of the Month">ETF Picks of the Month</a></li><li><a href="//etfdb.com/premium-articles/" title="Premium Articles">Premium Articles</a></li><li><a href="//etfdb.com/etf-guides/" title="ETF Guides">ETF Guides</a></li><li><a href="//etfdb.com/etfdb-categories/" title="ETFdb.com Category Reports">ETFdb.com Category Reports</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/members/pro/" title="Pro Tools">Pro Tools<b class="caret"></b></a><ul><li><a href="//etfdb.com/screener/#tab=fund-flows" title="ETF Fund Flows">ETF Fund Flows</a></li><li><a href="//etfdb.com/types/" title="Power Rankings">Power Rankings</a></li><li><a href="//etfdb.com/screener/" title="ETF Screener - Pro Version">ETF Screener - Pro Version</a></li><li><a href="//etfdb.com/tool/etf-comparison/" title="ETF Comparison Tool - Pro Version">ETF Comparison Tool - Pro Version</a></li><li><a href="//etfdb.com/tool/etf-stock-exposure-tool/" title="ETF Stock Exposure - Pro Version">ETF Stock Exposure - Pro Version</a></li><li><a href="//etfdb.com/etfs/" title="ETF Holdings Download">ETF Holdings Download</a></li><li><a href="//etfdb.com/members/pro/" title="See More...">See More...</a></li></ul></li></ul></li><li><a href="//etfdb.com/etfs/" title="Database">Database</a></li><li><a href="//etfdb.com/screener/" title="Screener">Screener</a></li><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/tools/" title="ETF Tools">ETF Tools<b class="caret"></b></a><ul><li><a href="//etfdb.com/screener/" title="ETF Screener">ETF Screener</a></li><li><a href="//etfdb.com/etfs/" title="Power Rankings">Power Rankings</a></li><li><a href="//etfdb.com/tool/etf-comparison/" title="Head-To-Head ETF Comparison Tool">Head-To-Head ETF Comparison Tool</a></li><li><a href="//etfdb.com/tool/mutual-fund-to-etf/" title="Mutual Fund To ETF Converter">Mutual Fund To ETF Converter</a></li><li><a href="//etfdb.com/tool/etf-country-exposure-tool/" title="ETF Country Exposure Tool">ETF Country Exposure Tool</a></li><li><a href="//etfdb.com/tool/etf-stock-exposure-tool/" title="ETF Stock Exposure Tool">ETF Stock Exposure Tool</a></li></ul></li><li><a href="//etfdb.com/news/" title="News">News</a></li><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/etf-education/" title="ETF Research">ETF Research<b class="caret"></b></a><ul><li><a href="//etfdb.com/2018-themes/" title="2018 Investing Themes">2018 Investing Themes</a></li><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/etf-education/how-market-catalysts-affect-etfs/" title="Market Catalysts">Market Catalysts<b class="caret"></b></a><ul><li><a href="//etfdb.com/german-elections-2017" title="German Elections">German Elections</a></li><li><a href="//etfdb.com/best-etfs-to-play-french-elections/" title="French Elections">French Elections</a></li><li><a href="//etfdb.com/rising-interest-rates/" title="Rising Rates">Rising Rates</a></li><li><a href="//etfdb.com/the-best-etfs-to-play-the-brexit-vote/" title="Brexit">Brexit</a></li><li><a href="//etfdb.com/2017-investing-themes/" title="2017 Investing Themes">2017 Investing Themes</a></li><li><a href="//etfdb.com/if-donald-trump-wins/" title="Trump&#39;s Victory">Trump&#39;s Victory</a></li><li><a href="//etfdb.com/italy-eu-exit/" title="Italy EU Exit">Italy EU Exit</a></li><li><a href="//etfdb.com/yuan-devaluation/" title="Yuan Devaluation">Yuan Devaluation</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="ETF Investing 101">ETF Investing 101<b class="caret"></b></a><ul><li><a href="//etfdb.com/etf-industry/" title="ETF Industry">ETF Industry</a></li><li><a href="//etfdb.com/etf-education/" title="ETF Investing">ETF Investing</a></li><li><a href="//etfdb.com/etf-trading-strategies/" title="ETF Trading Strategies">ETF Trading Strategies</a></li><li><a href="//etfdb.com/etf-tax-efficiency/" title="ETF Tax Efficiency">ETF Tax Efficiency</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Expertise &amp; Resources">Expertise &amp; Resources<b class="caret"></b></a><ul><li><a href="//etfdb.com/interviews/" title="Q&amp;A Interviews">Q&amp;A Interviews</a></li><li><a href="//etfdb.com/investor-tools-and-resources/" title="Investor Tools &amp; Resources">Investor Tools &amp; Resources</a></li><li><a href="//etfdb.com/etfdb-categories/" title="ETFdb.com Categories">ETFdb.com Categories</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Income Investing">Income Investing<b class="caret"></b></a><ul><li><a href="//etfdb.com/retirement-etfs/" title="Retirement Advice">Retirement Advice</a></li><li><a href="//etfdb.com/dividend-etf/" title="Dividend ETFs">Dividend ETFs</a></li><li><a href="//etfdb.com/fixed-income-etfs/" title="Fixed Income ETFs">Fixed Income ETFs</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Equity Investing">Equity Investing<b class="caret"></b></a><ul><li><a href="//etfdb.com/equity-etfs/" title="Equity ETFs">Equity ETFs</a></li><li><a href="//etfdb.com/technology-etfs/" title="Technology ETFs">Technology ETFs</a></li><li><a href="//etfdb.com/finance-etfs/" title="Financials ETFs">Financials ETFs</a></li><li><a href="//etfdb.com/emerging-market-etfs/" title="Emerging Markets ETFs">Emerging Markets ETFs</a></li><li><a href="//etfdb.com/international-etfs/" title="International ETFs">International ETFs</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Energy Investing">Energy Investing<b class="caret"></b></a><ul><li><a href="//etfdb.com/oil-and-natural-gas-etfs/" title="Oil &amp; Natural Gas ETFs">Oil &amp; Natural Gas ETFs</a></li><li><a href="//etfdb.com/energy-etfs/" title="Energy ETFs">Energy ETFs</a></li><li><a href="//etfdb.com/master-limited-partnerships-mlp-etfs/" title="MLP ETFs">MLP ETFs</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Alternative Investing">Alternative Investing<b class="caret"></b></a><ul><li><a href="//etfdb.com/precious-metal-etfs/" title="Precious Metals ETFs">Precious Metals ETFs</a></li><li><a href="//etfdb.com/commodity-etfs/" title="Commodity ETFs">Commodity ETFs</a></li><li><a href="//etfdb.com/real-estate-etfs/" title="Real Estate ETFs">Real Estate ETFs</a></li><li><a href="//etfdb.com/volatility-etfs/" title="Volatility ETFs">Volatility ETFs</a></li><li><a href="//etfdb.com/currency-etfs/" title="Currency ETFs">Currency ETFs</a></li><li><a href="//etfdb.com/currency-hedged-etfs/" title="Currency Hedged ETFs">Currency Hedged ETFs</a></li><li><a href="//etfdb.com/active-etf-center/" title="Actively Managed ETFs">Actively Managed ETFs</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Geared Investing">Geared Investing<b class="caret"></b></a><ul><li><a href="//etfdb.com/leveraged-etfs/" title="Leveraged ETFs">Leveraged ETFs</a></li><li><a href="//etfdb.com/inverse-etfs/" title="Inverse ETFs">Inverse ETFs</a></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" title="Popular ETFs">Popular ETFs<b class="caret"></b></a><ul><li><a href="//etfdb.com/etf/QQQ/" title="QQQ">QQQ</a></li><li><a href="//etfdb.com/etf/VOO/" title="VOO">VOO</a></li><li><a href="//etfdb.com/etf/VTI/" title="VTI">VTI</a></li><li><a href="//etfdb.com/etf/GDX/" title="GDX">GDX</a></li><li><a href="//etfdb.com/etf/FV/" title="FV">FV</a></li><li><a href="//etfdb.com/etf/IWM/" title="IWM">IWM</a></li><li><a href="//etfdb.com/etf/BND/" title="BND">BND</a></li><li><a href="//etfdb.com/etf/XLE/" title="XLE">XLE</a></li><li><a href="//etfdb.com/etf/TLT/" title="TLT">TLT</a></li><li><a href="//etfdb.com/etf/IBB/" title="IBB">IBB</a></li><li><a href="//etfdb.com/etf/GLD/" title="GLD">GLD</a></li><li><a href="//etfdb.com/etf/WDIV/" title="WDIV">WDIV</a></li><li><a href="//etfdb.com/etf/QID/" title="QID">QID</a></li><li><a href="//etfdb.com/etf/SHY/" title="SHY">SHY</a></li></ul></li></ul></li><li class="off-canvas-dropdown"><a class=" has-submenu" href="//etfdb.com/financial-advisor-center/" title="Advisors">Advisors<b class="caret"></b></a><ul><li><a href="//etfdb.com/practice-management/" title="Practice Management">Practice Management</a></li><li><a href="//etfdb.com/portfolio-management/" title="Portfolio Management">Portfolio Management</a></li></ul></li><li><a href="//etfdb.com/themes/artificial-intelligence-etfs/" title="AI ETFs">AI ETFs</a></li><li><a href="//etfdb.com/themes/blockchain-etfs/" title="Blockchain ETFs">Blockchain ETFs</a></li><li><a href="//etfdb.com/esg-investing/" title="ESG Investing">ESG Investing<div class="visual-indicator small hidden" data-expire="2018-09-15" data-vi-group="ESG Investing" style="padding-left: 5px"><span class="label label-new" data-content="Find ETFs based on ESG themes of your choice. " data-original-title="Invest Responsibly" data-placement="auto bottom" data-toggle="popover" data-trigger="hover">NEW</span></div></a></li><li><a href="//etfdb.com/themes/marijuana-etfs/" title="Marijuana ETFs">Marijuana ETFs<div class="visual-indicator small hidden" data-expire="2018-12-17" data-vi-group="Marijuana ETFs" style="padding-left: 5px"><span class="label label-new" data-content="Find ETFs with exposure to Marijuana companies." data-original-title="Marijuana ETFs" data-placement="auto bottom" data-toggle="popover" data-trigger="hover">NEW</span></div></a></li>
+</ul>
+</div>
+<div id='ad-slot-13511-33c2ac' data-dfp-unit-remove-iframe='true' data-dfp-unit='ad-slot-13511-33c2ac'></div>
+<script>googletag.cmd.push(function(){googletag.defineOutOfPageSlot('/2143012/mitre_webpage','ad-slot-13511-33c2ac').setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A30-8"]).addService(googletag.pubads());googletag.display('ad-slot-13511-33c2ac');});</script>
+<div class='mm-header-wrapper'>
+<div class='mm-header'>
+<div class='container'>
+<div class='row'>
+<div class='col-xs-12'>
+<div class='mm-user-links hidden-xs'>
+<ul class='list-inline pull-right'>
+<li><a href="/pricing/">Pricing</a></li>
+<li><a class="premium-link" href="/members/join/">Free Sign Up</a></li>
+<li><a class="premium-link" href="/members/login/?redirect_url=%2Fetf%2FXLU">Login</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class='row mm-header-content'>
+<div class='col-sm-4 mm-header-logos'>
+<button class='navbar-toggle'>
+<span class='fa fa-bars'></span>
+</button>
+<!--[if gt IE 9]><!-->
+<a class="mm-header-logo" href="https://etfdb.com/"><img alt="Etfdb logo" src="/assets/etfdb-logo-4146ed7e7b8029f97fe2f46ac7ced60c.svg"/></a>
+<!--<![endif]-->
+<a class="mm-header-logo--ie" href="https://etfdb.com/"><img alt="Etfdb logo" src="/assets/etfdb-logo-fe0191ef346f1d2b579b8abcd9ecf384.png.pagespeed.ce.pAirx6H4JH.png"/></a>
+<!--[if lte IE 9]>
+<a class="mm-header-logo" href="https://etfdb.com/"><img alt="Etfdb logo" src="/assets/etfdb-logo-fe0191ef346f1d2b579b8abcd9ecf384.png" /></a>
+<!--<![endif]--><!-->
+
+<button class='search-toggle' data-target='#search-collapse' data-toggle='collapse' type='button'>
+<span class='fa fa-search'></span>
+</button>
+</div>
+<div class='col-sm-5 col-md-4 hidden-xs'>
+<div class='search-wrapper'>
+<div id='sponsored-search' data-dfp-unit-remove-iframe= 'true' data-dfp-unit= 'sponsored-search' data-placeholder='{"template":"tooltip","text":"A10-3"}'></div>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineOutOfPageSlot('/2143012/mitre_webpage', 'sponsored-search').setTargeting('uri', ["/etf/XLU"]).setTargeting('tags', ["etf", "XLU", "state-street-spdr", "utilities-select-sector-index", "utilities-equities", "root", "asset-class", "equity", "sector", "size", "large-cap", "style", "value", "region", "structure", "north-america", "us", "utilities", "broad", "investment-style", "consistent-growth", "low-beta", "socially-responsible", "dividend-frequency", "quarterly", "Large Cap Equity", "ETF", "Value Equity", "Socially Responsible", "Equity", "Large Cap", "Sector", "State Street SPDR", "Broad Utilities Sector", "Equity Asset Class", "Developed Markets", "Equity ETFs", "Long", "United States Exposure", "North America", "Utilities Sector", "United States", "Currency Hedged", "Passive", "Rising Interest Rates", "Value", "Liquid ETFs"]).setTargeting('slot_name', ["A10-3"]).addService(googletag.pubads());
+
+    googletag.display('sponsored-search');
+  });
+</script> 
+<div class='collapse search-collapse' data-dfp-unit-served='{"addClass":"sponsored"}' data-dfp-unit='sponsored-search'>
+<div class='typeahead-container'>
+<form accept-charset="UTF-8" action="/search" class="search" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input autocomplete="off" class="form-control typeahead" data-displaykey="name" data-handlebar="{{symbol}} – {{name}}" data-redirect="/search?q={{symbol}}" data-searchremote="/search.json?q=%QUERY" id="sponsored-search-typeahead" name="q" placeholder="Search" spellcheck="false" type="text" value="" />
+<span class='input-group-btn'>
+<button class="btn btn-default" name="button" type="submit"><span class='fa fa-search'></span>
+</button></span>
+</form>
+
+</div>
+
+<div class='search-right'>
+<a data-analytics-track-click="{&quot;category&quot;:&quot;Advanced Search&quot;,&quot;action&quot;:&quot;click&quot;,&quot;label&quot;:&quot;Advanced Link&quot;}" href="/screener/">Advanced</a>
+</div>
+
+</div>
+</div>
+</div>
+<div class='col-sm-3 col-md-4 hidden-xs'>
+<div class='pull-right'>
+<div id='follow-module-social'>
+<div class='btn-toolbar social-module'>
+<div class='social-module-btns'>
+<div class='btn-group'>
+<div class='social-module-services'>
+<div class='btn social-module-share'>
+<a>
+<i class='fa fa-user-plus'></i>
+</a>
+</div>
+<div class='btn social-module-facebook'>
+<a href="http://www.facebook.com/pages/ETF-Database/66870498051" target="_blank"><i class='fa fa-fw fa-facebook'></i>
+</a></div>
+<div class='btn social-module-twitter'>
+<a href="http://twitter.com/ETFdb" target="_blank"><i class='fa fa-fw fa-twitter'></i>
+</a></div>
+<div class='btn social-module-google'>
+<a href="https://plus.google.com/110466392567244625284/" target="_blank"><i class='fa fa-fw fa-google-plus'></i>
+</a></div>
+<div class='btn social-module-linkedin'>
+<a href="https://www.linkedin.com/company/611074" target="_blank"><i class='fa fa-fw fa-linkedin'></i>
+</a></div>
+</div>
+</div>
+<div class='social-module-label'>
+Follow
+<span class='text-secondary'>
+ETFdb.com
+</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='collapse mm-mobile-search clearfix' id='search-collapse'>
+<div class='col-xs-12'>
+<div class='typeahead-container'>
+<form accept-charset="UTF-8" action="/search" class="search" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input autocomplete="off" class="form-control typeahead" data-displaykey="name" data-handlebar="{{symbol}} – {{name}}" data-redirect="/search?q={{symbol}}" data-searchremote="/search.json?q=%QUERY" id="search-typeahead" name="q" placeholder="Search" spellcheck="false" type="text" value="" />
+<span class='input-group-btn'>
+<button class="btn btn-default" name="button" type="submit"><span class='fa fa-search'></span>
+</button></span>
+</form>
+
+</div>
+
+<div class='below-search-mobile'>
+<a data-analytics-track-click="{&quot;category&quot;:&quot;Advanced Search&quot;,&quot;action&quot;:&quot;click&quot;,&quot;label&quot;:&quot;Advanced Link Docked&quot;}" href="/screener/">Advanced</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='navbar navbar-default hidden-xs'>
+<div class='container'>
+<ul class='nav navbar-nav' data-analytics-track-click='{"category": "Navigation", "action": "click"}'>
+<li class="nav-item v2 dropdown"><a class=" nav-orange-white has-submenu" href="//etfdb.com/members/pro/" title="PRO">PRO<span class="sub-arrow"></span></a><div class="full-width-nav-dropdown dropdown-menu v2" style="display: none;"><div class="row-dropdown"><div class="row"><div class="col-sm-6"><p class="first-level-link"><a href="/members/pro/">ETFdb.com Pro Content   »</a></p><p class="first-level-content">This exclusive PRO content provides investors with our monthly ETF picks, monthly newsletter, as well as fundamental and technical analysis on ETFs and much more.</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/etf-picks-of-the-month/">› ETF Picks of the Month</a></p><p class="second-level-link"><a href="/premium-articles/">› Premium Articles</a></p><p class="second-level-link"><a href="/etf-guides/">› ETF Guides</a></p><p class="second-level-link"><a href="/etfdb-categories/">› ETFdb.com Category Reports</a></p></div></div></div><div class="col-sm-6"><p class="first-level-link"><a href="/members/pro/">Pro Tools   »</a></p><p class="first-level-content">These exclusive PRO tools provide investors with up to date fund flow data, power rankings, downloadable ETF holdings and much more.</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/screener/#tab=fund-flows">› ETF Fund Flows</a></p><p class="second-level-link"><a href="/types/">› Power Rankings</a></p><p class="second-level-link"><a href="/screener/">› ETF Screener - Pro Version</a></p><p class="second-level-link"><a href="/tool/etf-comparison/">› ETF Comparison Tool - Pro Version</a></p><p class="second-level-link"><a href="/tool/etf-stock-exposure-tool/">› ETF Stock Exposure - Pro Version</a></p><p class="second-level-link"><a href="/etfs/">› ETF Holdings Download</a></p><p class="second-level-link"><a href="/members/pro/">› See More...</a></p></div></div></div></div></div><div class="ad row-dropdown row" data-render-ad="A20-1" data-render-email-capture="false"></div></div></li><li class="nav-item v2"><a href="//etfdb.com/etfs/" title="Database">Database</a></li><li class="nav-item v2"><a href="//etfdb.com/screener/" title="Screener">Screener</a></li><li class="nav-item v2 dropdown"><a class=" has-submenu" href="//etfdb.com/tools/" title="ETF Tools">ETF Tools<span class="sub-arrow"></span></a><div class="full-width-nav-dropdown dropdown-menu v2" style="display: none;"><div class="row-dropdown"><div class="row"><div class="col-sm-4"><p class="first-level-link"><a href="/screener/">ETF Screener   »</a></p><p class="first-level-content">ETFdb.com’s proprietary ETF Screener allows users to filter and screen all ETFs based on customized parameters.</p><p class="first-level-link"><a href="/tool/mutual-fund-to-etf/">Mutual Fund To ETF Converter   »</a></p><p class="first-level-content">Switch from mutual funds to ETFs by identifying the “best fit” ETFs based on underlying holdings.</p></div><div class="col-sm-4"><p class="first-level-link"><a href="/etfs/">Power Rankings   »</a></p><p class="first-level-content">Compare ETF themes based on popular financial metrics, including fund flows, return, AUM, expense ratio, dividend yield and issuer revenue.</p><p class="first-level-link"><a href="/tool/etf-country-exposure-tool/">ETF Country Exposure Tool   »</a></p><p class="first-level-content">This Tool allows investors to identify equity ETFs that offer exposure to a specified country.</p></div><div class="col-sm-4"><p class="first-level-link"><a href="/tool/etf-comparison/">Head-To-Head ETF Comparison Tool   »</a></p><p class="first-level-content">Investors can compare two ETFs head-to-head, making it easy to decide between potential ETF investments.</p><p class="first-level-link"><a href="/tool/etf-stock-exposure-tool/">ETF Stock Exposure Tool   »</a></p><p class="first-level-content">This tool allows investors to identify ETFs that have significant exposure to a selected equity security.</p></div></div><div class="row"><div class="text-center first-level-link"><a href="/tools/">See More</a></div></div></div><div class="ad row-dropdown row" data-render-ad="A20-2" data-render-email-capture="true"></div></div></li><li class="nav-item v2"><a href="//etfdb.com/news/" title="News">News</a></li><li class="nav-item v2 dropdown"><a class=" has-submenu" href="//etfdb.com/etf-education/" title="ETF Research">ETF Research<span class="sub-arrow"></span></a><div class="full-width-nav-dropdown dropdown-menu v2" style="display: none;"><div class="row-dropdown"><div class="row"><div class="col-sm-4"><p class="first-level-link"><a href="/2018-themes/">2018 Investing Themes   »</a></p><p class="first-level-content">See which overarching investment topics are poised to shape the financial markets in 2018.</p><p class="first-level-link"><a href="/etf-education/how-market-catalysts-affect-etfs/">Market Catalysts   »</a></p><p class="first-level-content">Find out which events are likely to move markets in a significant manner.</p><div class="dropdown-second-level row"><div class="col-sm-6"><p class="second-level-link"><a href="/german-elections-2017">› German Elections</a></p><p class="second-level-link"><a href="/best-etfs-to-play-french-elections/">› French Elections</a></p><p class="second-level-link"><a href="/rising-interest-rates/">› Rising Rates</a></p><p class="second-level-link"><a href="/the-best-etfs-to-play-the-brexit-vote/">› Brexit</a></p></div><div class="col-sm-6"><p class="second-level-link"><a href="/2017-investing-themes/">› 2017 Investing Themes</a></p><p class="second-level-link"><a href="/if-donald-trump-wins/">› Trump&#39;s Victory</a></p><p class="second-level-link"><a href="/italy-eu-exit/">› Italy EU Exit</a></p><p class="second-level-link"><a href="/yuan-devaluation/">› Yuan Devaluation</a></p></div></div><p class="first-level-link">ETF Investing 101</p><p class="first-level-content">Educational articles geared toward teaching investors on the basics of ETFs and ETF investing.</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/etf-industry/">› ETF Industry</a></p><p class="second-level-link"><a href="/etf-education/">› ETF Investing</a></p><p class="second-level-link"><a href="/etf-trading-strategies/">› ETF Trading Strategies</a></p><p class="second-level-link"><a href="/etf-tax-efficiency/">› ETF Tax Efficiency</a></p></div></div></div><div class="col-sm-4"><p class="first-level-link">Expertise &amp; Resources</p><p class="first-level-content">A collection of resources, Q&amp;A Interviews with industry pros, and ETF categories to help investors research, gain industry insights and evaluate ETFs.</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/interviews/">› Q&amp;A Interviews</a></p><p class="second-level-link"><a href="/investor-tools-and-resources/">› Investor Tools &amp; Resources</a></p><p class="second-level-link"><a href="/etfdb-categories/">› ETFdb.com Categories</a></p></div></div><p class="first-level-link">Income Investing</p><p class="first-level-content">Useful tools, tips and content for earning an income stream from your ETF investments.</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/retirement-etfs/">› Retirement Advice</a></p><p class="second-level-link"><a href="/dividend-etf/">› Dividend ETFs</a></p><p class="second-level-link"><a href="/fixed-income-etfs/">› Fixed Income ETFs</a></p></div></div><p class="first-level-link">Equity Investing</p><p class="first-level-content">Insights and analysis on various equity focused ETF sectors</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/equity-etfs/">› Equity ETFs</a></p><p class="second-level-link"><a href="/technology-etfs/">› Technology ETFs</a></p><p class="second-level-link"><a href="/finance-etfs/">› Financials ETFs</a></p><p class="second-level-link"><a href="/emerging-market-etfs/">› Emerging Markets ETFs</a></p><p class="second-level-link"><a href="/international-etfs/">› International ETFs</a></p></div></div></div><div class="col-sm-4"><p class="first-level-link">Energy Investing</p><p class="first-level-content">Insights and analysis on energy focused ETFs</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/oil-and-natural-gas-etfs/">› Oil &amp; Natural Gas ETFs</a></p><p class="second-level-link"><a href="/energy-etfs/">› Energy ETFs</a></p><p class="second-level-link"><a href="/master-limited-partnerships-mlp-etfs/">› MLP ETFs</a></p></div></div><p class="first-level-link">Alternative Investing</p><p class="first-level-content">Insights and analysis on Real Estate, Commodities, and other alternative investment focused ETFs</p><div class="dropdown-second-level row"><div class="col-sm-6"><p class="second-level-link"><a href="/precious-metal-etfs/">› Precious Metals ETFs</a></p><p class="second-level-link"><a href="/commodity-etfs/">› Commodity ETFs</a></p><p class="second-level-link"><a href="/real-estate-etfs/">› Real Estate ETFs</a></p><p class="second-level-link"><a href="/volatility-etfs/">› Volatility ETFs</a></p></div><div class="col-sm-6"><p class="second-level-link"><a href="/currency-etfs/">› Currency ETFs</a></p><p class="second-level-link"><a href="/currency-hedged-etfs/">› Currency Hedged ETFs</a></p><p class="second-level-link"><a href="/active-etf-center/">› Actively Managed ETFs</a></p></div></div><p class="first-level-link">Geared Investing</p><p class="first-level-content">Insights and analysis on leveraged and inverse ETFs</p><div class="dropdown-second-level row"><div class="col-sm-12"><p class="second-level-link"><a href="/leveraged-etfs/">› Leveraged ETFs</a></p><p class="second-level-link"><a href="/inverse-etfs/">› Inverse ETFs</a></p></div></div><p class="first-level-link">Popular ETFs</p><p class="first-level-content">View the most popular ETFS based on AUM</p><div class="dropdown-second-level row"><div class="col-sm-3"><p class="second-level-link"><a href="/etf/QQQ/">› QQQ</a></p><p class="second-level-link"><a href="/etf/VOO/">› VOO</a></p><p class="second-level-link"><a href="/etf/VTI/">› VTI</a></p><p class="second-level-link"><a href="/etf/GDX/">› GDX</a></p></div><div class="col-sm-3"><p class="second-level-link"><a href="/etf/FV/">› FV</a></p><p class="second-level-link"><a href="/etf/IWM/">› IWM</a></p><p class="second-level-link"><a href="/etf/BND/">› BND</a></p><p class="second-level-link"><a href="/etf/XLE/">› XLE</a></p></div><div class="col-sm-3"><p class="second-level-link"><a href="/etf/TLT/">› TLT</a></p><p class="second-level-link"><a href="/etf/IBB/">› IBB</a></p><p class="second-level-link"><a href="/etf/GLD/">› GLD</a></p></div><div class="col-sm-3"><p class="second-level-link"><a href="/etf/WDIV/">› WDIV</a></p><p class="second-level-link"><a href="/etf/QID/">› QID</a></p><p class="second-level-link"><a href="/etf/SHY/">› SHY</a></p></div></div></div></div></div><div class="ad row-dropdown row" data-render-ad="" data-render-email-capture="false"></div></div></li><li class="nav-item v2 dropdown"><a class=" has-submenu" href="//etfdb.com/financial-advisor-center/" title="Advisors">Advisors<span class="sub-arrow"></span></a><div class="full-width-nav-dropdown dropdown-menu v2" style="display: none;"><div class="row-dropdown"><div class="row"><div class="col-sm-6"><p class="first-level-link"><a href="/practice-management/">Practice Management   »</a></p><p class="first-level-content">Content focused on identifying potential gaps in advisory businesses, and isolate trends that may impact how advisors do business in the future.</p></div><div class="col-sm-6"><p class="first-level-link"><a href="/portfolio-management/">Portfolio Management   »</a></p><p class="first-level-content">Content geared towards helping to train those financial advisors who use ETFs in client portfolios.</p></div></div></div><div class="ad row-dropdown row" data-render-ad="A20-3" data-render-email-capture="true"></div></div></li><li class="nav-item v2"><a href="//etfdb.com/themes/artificial-intelligence-etfs/" title="AI ETFs">AI ETFs</a></li><li class="nav-item v2"><a href="//etfdb.com/themes/blockchain-etfs/" title="Blockchain ETFs">Blockchain ETFs</a></li><li class="nav-item v2"><a href="//etfdb.com/esg-investing/" title="ESG Investing">ESG Investing<div class="visual-indicator small hidden" data-expire="2018-09-15" data-vi-group="ESG Investing" style="padding-left: 5px"><span class="label label-new" data-content="Find ETFs based on ESG themes of your choice. " data-original-title="Invest Responsibly" data-placement="auto bottom" data-toggle="popover" data-trigger="hover">NEW</span></div></a></li><li class="nav-item v2"><a href="//etfdb.com/themes/marijuana-etfs/" title="Marijuana ETFs">Marijuana ETFs<div class="visual-indicator small hidden" data-expire="2018-12-17" data-vi-group="Marijuana ETFs" style="padding-left: 5px"><span class="label label-new" data-content="Find ETFs with exposure to Marijuana companies." data-original-title="Marijuana ETFs" data-placement="auto bottom" data-toggle="popover" data-trigger="hover">NEW</span></div></a></li>
+
+</ul>
+</div>
+</div>
+</div>
+<div id='propelor-promo-modal'>
+<div class='modal fade centered-dimmed-modal' id='propelor-promo-prompt' role='dialog' tabindex='-1'>
+<div class='modal-dialog modal-dialog-centered' role='document'>
+<div class='modal-content'>
+<div class='modal-body'>
+<iframe frameborder='0' id='promoModal'></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class='leaderboard-atf container' style='z-index: 10001;'>
+<div class='spacing-md'></div>
+<div class='row'>
+<div class='col-xs-12'>
+<div id='top-leaderboard'></div>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/2143012/mitre_webpage', [[300, 250], [728, 90], [970, 90], [970, 250]], 'top-leaderboard').defineSizeMapping(leaderboardMapping).setTargeting('uri', ["/etf/XLU"]).setTargeting('tags', ["etf", "XLU", "state-street-spdr", "utilities-select-sector-index", "utilities-equities", "root", "asset-class", "equity", "sector", "size", "large-cap", "style", "value", "region", "structure", "north-america", "us", "utilities", "broad", "investment-style", "consistent-growth", "low-beta", "socially-responsible", "dividend-frequency", "quarterly", "Large Cap Equity", "ETF", "Value Equity", "Socially Responsible", "Equity", "Large Cap", "Sector", "State Street SPDR", "Broad Utilities Sector", "Equity Asset Class", "Developed Markets", "Equity ETFs", "Long", "United States Exposure", "North America", "Utilities Sector", "United States", "Currency Hedged", "Passive", "Rising Interest Rates", "Value", "Liquid ETFs"]).setTargeting('slot_name', ["A3-1"]).addService(googletag.pubads());
+
+    googletag.display('top-leaderboard');
+  });
+</script> 
+<div class='spacing-md'></div>
+</div>
+</div>
+</div>
+</div>
+<div class='container mm-main-container'>
+<!-- Add class .ad-is-fixed to the div if you want the ads to be sticky -->
+<div class='left-wing-default ad-is-fixed' data-dfp-unit-width-gt-manipulation='{"addClass":"left-wing-300x250","removeClass":"left-wing-160x600"}' data-dfp-unit-width-gt='299' data-dfp-unit-width-lt-manipulation='{"addClass":"left-wing-160x600","removeClass":"left-wing-300x250"}' data-dfp-unit-width-lt='161' data-dfp-unit='left-wing' data-fixed='{"top":160}'>
+<div id='left-wing'></div>
+<script>googletag.cmd.push(function(){googletag.defineSlot('/2143012/mitre_webpage',[[120,600],[160,600],[300,250],[300,600],[300,1050]],'left-wing').defineSizeMapping(outOfContentMapping).setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A1-3"]).addService(googletag.pubads());googletag.display('left-wing');});</script>
+<div class='ad-is-fixed' data-dfp-unit-height-gt-manipulation='{"html":""}' data-dfp-unit-height-gt='250' data-dfp-unit-height-lt-manipulation='{"html":"\u003cscript\u003egoogletag.cmd.push(function() { googletag.display(&#x0027;left-wing-stacked&#x0027;); });\u003c/script\u003e"}' data-dfp-unit-height-lt='251' data-dfp-unit='left-wing' id='left-wing-stacked'>
+<div id='left-wing-stacked'></div>
+<script>googletag.cmd.push(function(){googletag.defineSlot('/2143012/mitre_webpage',[[300,250]],'left-wing-stacked').defineSizeMapping(stackedOutOfContentMapping).setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A1-4"]).addService(googletag.pubads());});</script>
+</div>
+</div>
+<div class='right-wing-default ad-is-fixed' data-dfp-unit-width-gt-manipulation='{"addClass":"right-wing-300x250","removeClass":"right-wing-160x600"}' data-dfp-unit-width-gt='299' data-dfp-unit-width-lt-manipulation='{"addClass":"right-wing-160x600","removeClass":"right-wing-300x250"}' data-dfp-unit-width-lt='161' data-dfp-unit='right-wing' data-fixed='{"top":160}'>
+<div id='right-wing'></div>
+<script>googletag.cmd.push(function(){googletag.defineSlot('/2143012/mitre_webpage',[[120,600],[160,600],[300,250],[300,600],[300,1050]],'right-wing').defineSizeMapping(outOfContentMapping).setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A1-5"]).addService(googletag.pubads());googletag.display('right-wing');});</script>
+<div class='ad-is-fixed' data-dfp-unit-height-gt-manipulation='{"html":""}' data-dfp-unit-height-gt='250' data-dfp-unit-height-lt-manipulation='{"html":"\u003cscript\u003egoogletag.cmd.push(function() { googletag.display(&#x0027;right-wing-stacked&#x0027;); });\u003c/script\u003e"}' data-dfp-unit-height-lt='251' data-dfp-unit='right-wing' id='right-wing-stacked'>
+<div id='right-wing-stacked'></div>
+<script>googletag.cmd.push(function(){googletag.defineSlot('/2143012/mitre_webpage',[[300,250]],'right-wing-stacked').defineSizeMapping(stackedOutOfContentMapping).setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A1-6"]).addService(googletag.pubads());});</script>
+</div>
+</div>
+<div id='ad-slot-13511-192978' data-dfp-unit-remove-iframe='true' data-dfp-unit='ad-slot-13511-192978'></div>
+<script>googletag.cmd.push(function(){googletag.defineOutOfPageSlot('/2143012/mitre_webpage','ad-slot-13511-192978').setTargeting('uri',["/etf/XLU"]).setTargeting('tags',["etf","XLU","state-street-spdr","utilities-select-sector-index","utilities-equities","root","asset-class","equity","sector","size","large-cap","style","value","region","structure","north-america","us","utilities","broad","investment-style","consistent-growth","low-beta","socially-responsible","dividend-frequency","quarterly","Large Cap Equity","ETF","Value Equity","Socially Responsible","Equity","Large Cap","Sector","State Street SPDR","Broad Utilities Sector","Equity Asset Class","Developed Markets","Equity ETFs","Long","United States Exposure","North America","Utilities Sector","United States","Currency Hedged","Passive","Rising Interest Rates","Value","Liquid ETFs"]).setTargeting('slot_name',["A10-1"]).addService(googletag.pubads());googletag.display('ad-slot-13511-192978');});</script>
+<div class='row'>
+<div class='col-md-12'>
+<div class='social-share-heading-container'>
+<div class='bottom btn-toolbar social-module' data-shareable='{"anchor":"","url":"https://etfdb.com/etf/XLU/","facebook":{"title":"Utilities Select Sector SPDR Fund","description":"Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more."},"twitter":{"message":"Utilities Select Sector SPDR Fund"},"linkedin":{"title":"Utilities Select Sector SPDR Fund","description":"Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more."},"email":{"subject":"Utilities Select Sector SPDR Fund","body":"Explore XLU for FREE on ETFdb.com: Price, Holdings, Charts, Technicals, Fact Sheet, News, and more."}}'>
+<div class='social-module-btns'>
+<div class='btn-group'>
+<div class='social-module-services'>
+<div class='btn social-module-share'>
+<a>
+<i class='fa fa-share'></i>
+</a>
+</div>
+<div class='btn social-module-facebook' data-shareable-service='facebook'>
+<a>
+<i class='fa fa-fw fa-facebook'></i>
+</a>
+</div>
+<div class='btn social-module-twitter' data-shareable-service='twitter'>
+<a>
+<i class='fa fa-fw fa-twitter'></i>
+</a>
+</div>
+<div class='btn social-module-linkedin' data-shareable-service='linkedin'>
+<a>
+<i class='fa fa-fw fa-linkedin'></i>
+</a>
+</div>
+<div class='btn social-module-email' data-shareable-service='email'>
+<a>
+<i class='fa fa-fw fa-envelope'></i>
+</a>
+</div>
+<div class='btn social-module-link' data-shareable-service='link'>
+<a>
+<i class='fa fa-fw fa-link'></i>
+</a>
+</div>
+</div>
+</div>
+<div class='social-module-label'>
+Share
+</div>
+</div>
+<div class='btn-group social-module-field'>
+<div class='btn social-module-close pull-right' data-shareable-service='close'>
+<a>
+<i class='fa fa-fw fa-close'></i>
+</a>
+</div>
+<div class='well' data-container='body' data-placement='bottom' data-toggle='tooltip' data-trigger='manual' title='URL copied to your clipboard!'></div>
+</div>
+</div>
+<h1 class='data-title'>
+<span class='label label-primary'>XLU</span>
+<span>Utilities Select Sector SPDR Fund</span>
+</h1>
+</div>
+</div>
+<div class='spacing-md clearfix'></div>
+</div>
+<div class='row'>
+<div class='col-xs-12'>
+<div class='ticker-data-space'></div>
+<div class='ticker-data'>
+<ul class='list-inline'>
+<li class='title'>ETF</li>
+<li class='symbol'>XLU</li>
+</ul>
+<ul class='data-metrics' id='barchart-stock-quote'>
+<div class='bcSimpleQuote'>
+<div class='bcSimpleQuoteTitle'>Pricing Data</div>
+<div class='bcSimpleQuoteLast'>
+<span class='bcSimpleQuoteLastValue'>$53.32</span>
+<span class='bcSimpleQuoteLastImage'></span>
+</div>
+<div class='bcSimpleQuoteChange'>
+<span class='bcSimpleQuoteChangeTitle'>Change:</span>
+<span class='bcSimpleQuoteChangeValue'>$0.74 (-0.01%)</span>
+</div>
+<div class='bcSimpleQuoteTime'>
+<span class='bcSimpleQuoteTimeTitle'>Time:</span>
+<span class='bcSimpleQuoteTimeValue'>01/25/19</span>
+</div>
+<div class='bcSimpleQuoteClose'>
+<span class='bcSimpleQuoteCloseTitle'>Previous Close:</span>
+<span class='bcSimpleQuoteCloseValue'>$54.06</span>
+</div>
+</div>
+</ul>
+<ul class='list-inline'>
+<li class='title'>Category</li>
+<li class='symbol'>Utilities Equities</li>
+</ul>
+<div class='clearfix hidden-lg hidden-md'></div>
+<ul class='list-inline'>
+<li class='title'>ESG Score</li>
+<li class='progress-container'>
+<div class='progress'>
+<div aria-valuemax='100' aria-valuemin='0' class='progress-bar progress-bar-success' role='progressbar' style='width: 65.900%'></div>
+</div>
+<table id='MainTable'>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='content-divider-heading'></div>
+<div class='row hidden-xs'>
+<div class='col-md-12'>
+<div class='ticker-nav-space'></div>
+<div class='ticker-nav'>
+<ul class='list-inline'>
+<li>
+<a href="#overview">Profile</a>
+</li>
+<li>
+<a href="#realtime-rating">ETFdb Realtime Rating</a>
+</li>
+<li>
+<a href="#analyst-report">ETFdb Analyst Report</a>
+</li>
+<li>
+<a href="#holdings">Holdings</a>
+</li>
+<li>
+<a href="#expense">Expenses &amp; Fees</a>
+</li>
+<li>
+<a href="#esg">ESG</a>
+<span class='visual-indicator small hidden' data-expire='2018-12-05' data-vi-group='esg-tick'>
+<span class='label label-new' data-content='Evaluate ETFs across environmental, social and governance metrics.' data-placement='auto bottom' data-toggle='popover' data-trigger='hover' title='Invest Responsibly'>New</span>
+</span>
+</li>
+<li>
+<a href="#performance">Performance</a>
+<li data-analytics-track-click='{ "category": "Ticker Fund Flows", "action": "Click", "label": "Fund Flow Header Tab" }'>
+<a href="#fund-flows">Fund Flows</a>
+</li>
+</li>
+<li>
+<a href="#charts">Charts</a>
+</li>
+<li>
+<a href="#valuation">Valuation</a>
+</li>
+<li>
+<a href="#dividend">Dividend</a>
+</li>
+<li>
+<a href="#technicals">Technicals</a>
+</li>
+<li>
+<a href="#fact-sheet">Fact Sheet</a>
+</li>
+<li>
+<a href="#read-next">Read Next</a>
+</li>
+</ul>
+</div>
+<div class='content-divider-heading'></div>
+<div class='spacing-md clearfix'></div>
+</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<ul class='breadcrumb pull-left'>
+<li><a class="fa fa-home" href="/"></a></li>
+<li><a href="/issuers/">Issuers</a></li>
+<li><a href="/issuer/state-street-spdr/">State Street SPDR</a></li>
+<li class='active'>Utilities Select Sector SPDR Fund</li>
+</ul>
+</div>
+<div class='col-md-6'>
+<div class='pull-right data-timestamp' itemscope='' itemtype='http://schema.org/WebPage'>
+Last Updated: <time class="date-modified" datetime="2019-01-25" itemprop="dateModified">Jan 25, 2019</time>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='ticker-anchor' id='overview'>
+<div class='col-md-8'>
+<div class='panel panel-default'>
+<div class='panel-body'>
+<div class='row'>
+<div class='col-xs-12'>
+<h2 class='h3'>
+Profile
+</h2>
+</div>
+</div>
+<div class='row'>
+<div class='col-sm-6'>
+<h3 class='h4'>Vitals</h3>
+<ul class='list-unstyled'>
+<li>
+<span>Issuer:</span>
+<span class='pull-right'><a href="/issuer/state-street-spdr/">State Street SPDR</a></span>
+</li>
+<li>
+<span>Structure:</span>
+<span class='pull-right'>ETF</span>
+</li>
+<li>
+<span>Expense Ratio:</span>
+<span class='pull-right'>0.13%</span>
+</li>
+<li>
+<span>ETF Home Page:</span>
+<span class='pull-right'><a href="http://www.sectorspdr.com/sectorspdr/sector/xlu">Home page</a></span>
+</li>
+<li>
+<span>Inception:</span>
+<span class='pull-right'>Dec 16, 1998</span>
+</li>
+<li>
+<span>Tax Form:</span>
+<span class='pull-right'>1099</span>
+</li>
+<li>
+<span>Tracks This Index:</span>
+<span class='pull-right'><a href="/index/utilities-select-sector-index/">Utilities Select Sector Index</a></span>
+</li>
+</ul>
+<div class='divider-vertical hidden-xs'></div>
+<div class='bottom-divider-horizontal hidden-sm hidden-md hidden-lg'></div>
+</div>
+<div class='col-sm-6'>
+<style type='text/css'>
+<style>
+  .bar-charts-table {
+    margin-bottom: 0.625rem;
+    border-bottom: 1px solid #f2f2f2; }
+    .bar-charts-table table {
+      width: 100%; }
+      .bar-charts-table table .rnnRowEven, .bar-charts-table table .rnnRowOdd {
+        margin-bottom: 10px; }
+      .bar-charts-table table td {
+        float: left;
+        width: 50%; }
+      .bar-charts-table table .rnnLabel {
+        color: #333333; }
+      .bar-charts-table table .rnnValue {
+        text-align: right; }
+  
+  .data-trading h3.heading {
+    display: block; }
+  .data-trading h3 {
+    display: none; }
+</style>
+</style>
+<div class='data-trading bar-charts-table'>
+<h3 class='h4 heading'>Trading Data</h3>
+<div id='barchart-trading-data'>
+<table>
+<tbody>
+<tr class='rnnRowOdd'>
+<td class='rnnLabel'>Open:</td>
+<td class='rnnValue'>-</td>
+<td class='rnnLabel'>Volume</td>
+<td class='rnnValue'>-</td>
+</tr>
+<tr class='rnnRowEven'>
+<td class='rnnLabel'>Day Lo</td>
+<td class='rnnValue'>-</td>
+<td class='rnnLabel'>Day Hi</td>
+<td class='rnnValue'>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class='list-unstyled'>
+<li>
+<span>52 Week Lo:</span>
+<span class='pull-right'>$45.79</span>
+</li>
+<li>
+<span>52 Week Hi:</span>
+<span class='pull-right'>$56.70</span>
+</li>
+</ul>
+<div class='bottom-divider-horizontal'></div>
+<ul class='list-unstyled'>
+<li>
+<span>AUM:</span>
+<span class='pull-right'>$8,580.3 M</span>
+</li>
+<li>
+<span>Shares:</span>
+<span class='pull-right'>160.9 M</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='spacing-md clearfix'></div>
+<div class='row'>
+<div class='col-md-12' data-dfp-unit-height-gt-manipulation='{"addClass":"middle-lead
