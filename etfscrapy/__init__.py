@@ -1,0 +1,1 @@
+from etfscrapy.market import market_data
